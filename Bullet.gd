@@ -1,6 +1,6 @@
 extends Area2D
 
-var SPEED = 2
+var SPEED = 50
 var BULLET_LIFE_TIME = 10
 
 var alive_for_seconds = 0
