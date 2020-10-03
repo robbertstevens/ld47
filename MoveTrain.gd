@@ -1,4 +1,4 @@
-extends PathFollow2D
+extends Path2D
 
 var current_speed = 0;
 
@@ -10,5 +10,8 @@ func _process(delta):
 		current_speed -= delta
 		current_speed = max(current_speed, -0.55)
 	
-	offset += current_speed
+	var children = get_children()
+	
+	for child in children: 
+		child.offset += current_speed
 
