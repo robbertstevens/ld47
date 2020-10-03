@@ -16,4 +16,5 @@ hframes = 2
 current = true
 
 [node name="Exhaust" type="Node2D" parent="."]
+position = Vector2( 3.96101, 0 )
 script = ExtResource( 3 )
