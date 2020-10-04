@@ -4,9 +4,6 @@
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
 [ext_resource path="res://player/Exhaust.gd" type="Script" id=3]
 
-
-
-
 [node name="Player" type="PathFollow2D"]
 position = Vector2( -24, -56 )
 script = ExtResource( 2 )
@@ -17,6 +14,7 @@ hframes = 2
 
 [node name="Camera2D" type="Camera2D" parent="Sprite"]
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="Exhaust" type="Node2D" parent="."]
 position = Vector2( 3.96101, 0 )
