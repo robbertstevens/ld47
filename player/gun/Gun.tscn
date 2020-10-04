@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Gun.gd" type="Script" id=1]
-[ext_resource path="res://player.png" type="Texture" id=2]
+[ext_resource path="res://player/gun/Gun.gd" type="Script" id=1]
+[ext_resource path="res://player/player.png" type="Texture" id=2]
+
+
+
 
 [node name="Gun" type="PathFollow2D"]
 position = Vector2( -24, -56 )

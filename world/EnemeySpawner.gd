@@ -1,7 +1,7 @@
 extends Node2D
 
 
-onready var ENEMY_SCENE = preload("res://Enemy.tscn")
+onready var ENEMY_SCENE = preload("res://enemy/Enemy.tscn")
 
 const SPAWN_RATE = 1
 

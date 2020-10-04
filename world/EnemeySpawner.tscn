@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://EnemeySpawner.gd" type="Script" id=1]
-[ext_resource path="res://spawner.png" type="Texture" id=2]
+[ext_resource path="res://world/EnemeySpawner.gd" type="Script" id=1]
+[ext_resource path="res://world/spawner.png" type="Texture" id=2]
+
+
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource( 1 )

@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-const BULLET_SCENE = preload("res://Bullet.tscn")
+const BULLET_SCENE = preload("res://player/gun/Bullet.tscn")
 const SPEED = 100
 const SHOT_DELAY = .05
 

@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://player.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://Exhaust.gd" type="Script" id=3]
+[ext_resource path="res://player/player.png" type="Texture" id=1]
+[ext_resource path="res://player/Player.gd" type="Script" id=2]
+[ext_resource path="res://player/Exhaust.gd" type="Script" id=3]
+
+
+
 
 [node name="Player" type="PathFollow2D"]
 position = Vector2( -24, -56 )

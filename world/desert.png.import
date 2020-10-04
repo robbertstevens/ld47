@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spawner.png-a5bdaad54ddfbf47bd9f5d3f7e80a397.stex"
+path="res://.import/desert.png-6fba309d14bed7fe8569c29ef1f3d5fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spawner.png"
-dest_files=[ "res://.import/spawner.png-a5bdaad54ddfbf47bd9f5d3f7e80a397.stex" ]
+source_file="res://world/desert.png"
+dest_files=[ "res://.import/desert.png-6fba309d14bed7fe8569c29ef1f3d5fd.stex" ]
 
 [params]
 

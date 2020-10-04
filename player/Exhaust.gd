@@ -1,6 +1,6 @@
 extends Node2D
 
-var SMOKE = preload("res://Smoke.tscn")
+var SMOKE = preload("res://player/Smoke.tscn")
 var smoke_frequency = .15
 var last_smoke = smoke_frequency
 
