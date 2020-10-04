@@ -10,3 +10,5 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 hframes = 2
 frame = 1
+
+[node name="GunOrigin" type="Node2D" parent="."]
