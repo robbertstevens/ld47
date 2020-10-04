@@ -1,23 +1,21 @@
 extends Node2D
 
-export var spawn_rate = 5.0;
+export var spawn_rate = 20.0;
 
-export (Array, PackedScene) var cloud_scenes = []
+onready var cloud = preload("res://cloud/Cloud.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_cloud();
 
-func spawn_cloud():
-	var r_index = randi() % cloud_scenes.size()
-	var cloud = cloud_scenes[r_index]
+func spawn_cloud():	
 	var cloud_instance = cloud.instance();
-	
 	get_parent().add_child(cloud_instance)
-	var rand_y = rand_range(0, 10)
-	cloud_instance.position += Vector2(0,0)
+	var rand_y = rand_range(-300, 300)
+	cloud_instance.position += Vector2(-400, rand_y)
 	
-	yield(get_tree().create_timer(spawn_rate), "timeout")
+	var rand_init_time = randi() % int(spawn_rate / 2);
+	yield(get_tree().create_timer(spawn_rate + rand_init_time), "timeout")
 	spawn_cloud();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
