@@ -1,7 +1,11 @@
 extends Path2D
 
+var audioStreamPlayer
 var GUN_SCENE = preload("res://player/gun/Gun.tscn")
 var current_speed = 0;
+
+func _ready():
+	audioStreamPlayer = get_tree().get_root().find_node("YeahPlayer", true, false)
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"): 
@@ -22,10 +26,12 @@ func _physics_process(delta):
 			
 			var all_trains = get_children()
 			var last_train = all_trains.back()
-			
+
 			var train = GUN_SCENE.instance()
 			train.offset = last_train.offset - 16
+			audioStreamPlayer.play()
 			add_child(train)
+
 	
 	var children = get_children()
 	
