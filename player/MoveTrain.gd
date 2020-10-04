@@ -32,3 +32,8 @@ func _physics_process(delta):
 	for child in children: 
 		child.offset += current_speed
 
+func take_damage(damage:int = 1):
+	var childs = get_children()
+	childs.back().take_damage(damage)
+	
+	

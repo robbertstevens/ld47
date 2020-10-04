@@ -7,3 +7,5 @@ var current_passenger = 0
 func	 _process(delta):
 	pass
 
+func take_damage():
+	pass

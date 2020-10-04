@@ -3,19 +3,25 @@ extends PathFollow2D
 const BULLET_SCENE = preload("res://player/gun/Bullet.tscn")
 const SPEED = 100
 const SHOT_DELAY = .05
-
+const MAX_HEALTH = 100
 var last_shot = 0
 
 var previous_position = Vector2.ZERO
 var velocity = Vector2.ZERO
+var current_health = MAX_HEALTH
 
 func _ready():
 	previous_position = position
+	$Control/HealthBar.value = MAX_HEALTH
+	$Control/HealthBar.max_value = MAX_HEALTH
 
 func _process(delta):
 	last_shot -= delta
 	velocity = (position - previous_position) / delta
 	previous_position = position
+	
+	if current_health <= 0:
+		queue_free()
 
 func shoot():
 	var bullet = BULLET_SCENE.instance()
@@ -29,3 +35,7 @@ func _input(event):
 		if last_shot < 0:
 			shoot()
 			last_shot = SHOT_DELAY
+
+func take_damage(damage:int = 10):
+	current_health -= damage
+	$Control/HealthBar.value = current_health

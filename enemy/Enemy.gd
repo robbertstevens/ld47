@@ -10,6 +10,9 @@ var last_time_damaged = 0
 var invulnerability_period = 0.01
 
 func _ready():
+	$Control/HealthBar.value = MAX_HEALTH
+
+	$Control/HealthBar.max_value = MAX_HEALTH
 	$AnimationPlayer.play("walk")
 
 func _process(delta):
@@ -25,15 +28,23 @@ func _physics_process(delta):
 	var direction = (find_target() - position).normalized()
 	var motion = direction * SPEED
 	
-	var collider = move_and_collide(motion * delta)
+	move_and_collide(motion * delta)
 	
 func find_target():
-	return get_tree().get_root().find_node("Player", true, false).get_global_transform().get_origin()
+	if get_tree().get_root().find_node("Player", true, false):
+		return get_tree().get_root().find_node("Player", true, false).get_parent().get_children().back().get_global_transform().get_origin()
 	
+	return Vector2()
 
 func take_damage(damage: int = 10):
 	if last_time_damaged <= 0:
 		$AnimationPlayer.play("hurt")
 		current_health -= damage
+		$Control/HealthBar.value = current_health
 		last_time_damaged = invulnerability_period
 		
+
+
+func _on_Attack_area_entered(area):
+	$AnimationPlayer.play("attack");
+	area.get_parent().take_damage()
