@@ -28,7 +28,7 @@ func _physics_process(delta):
 	var collider = move_and_collide(motion * delta)
 	
 func find_target():
-	return Vector2(0, 0)
+	return get_tree().get_root().find_node("Player", true, false).get_global_transform().get_origin()
 	
 
 func take_damage(damage: int = 10):

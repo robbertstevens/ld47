@@ -5,7 +5,7 @@
 [ext_resource path="res://player/Exhaust.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 13.0529
+radius = 15.8902
 
 [node name="Player" type="PathFollow2D"]
 position = Vector2( -24, -56 )
