@@ -4,6 +4,9 @@ const BULLET_SCENE = preload("res://player/gun/Bullet.tscn")
 const SPEED = 100
 const SHOT_DELAY = .05
 const MAX_HEALTH = 100
+
+export var last: bool = false
+
 var last_shot = 0
 
 var previous_position = Vector2.ZERO
@@ -31,11 +34,12 @@ func shoot():
 	bullet.set_train_velocity(velocity)
 
 func _input(event):
-	if event.is_action("ui_accept"):
+	if event.is_action("ui_shoot"):
 		if last_shot < 0:
 			shoot()
 			last_shot = SHOT_DELAY
 
 func take_damage(damage:int = 10):
-	current_health -= damage
-	$Control/HealthBar.value = current_health
+	if last:
+		current_health -= damage
+		$Control/HealthBar.value = current_health
