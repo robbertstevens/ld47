@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/MoveTrain.gd" type="Script" id=1]
 [ext_resource path="res://world/desert.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://world/track.png" type="Texture" id=5]
 [ext_resource path="res://player/gun/Gun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://passenger/Passenger.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 9.04893, 13.4438, 3.67477, 13.4438, 3.67477, 2.6955, 9.04893, 2.6955 )
@@ -114,3 +115,6 @@ position = Vector2( 419.582, 278.571 )
 
 [node name="EnemySpawner4" parent="." instance=ExtResource( 4 )]
 position = Vector2( -299.217, 220.841 )
+
+[node name="Passenger" parent="." instance=ExtResource( 8 )]
+position = Vector2( 7.98888, -71.4902 )

@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var DEAD_ENEMY_SCENE = preload("res://enemy/DeadEnemy.tscn")
+
 const SPEED = 10
 const MAX_HEALTH = 50
 
@@ -15,6 +17,9 @@ func _process(delta):
 
 	if current_health <= 0:
 		queue_free()
+		var dead_enemy = DEAD_ENEMY_SCENE.instance()
+		find_parent("World").add_child(dead_enemy)
+		dead_enemy.position = get_global_transform().get_origin()
 
 func _physics_process(delta):
 	var direction = (find_target() - position).normalized()
