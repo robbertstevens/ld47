@@ -39,6 +39,8 @@ script = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="PickupLayer" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupLayer"]
 shape = SubResource( 2 )

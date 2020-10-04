@@ -7,19 +7,15 @@
 [ext_resource path="res://world/track.png" type="Texture" id=5]
 [ext_resource path="res://player/gun/Gun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://passenger/Passenger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PassengerManager.tscn" type="PackedScene" id=8]
 [ext_resource path="res://cloud/CloudSystem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://world/fort.tscn" type="PackedScene" id=10]
 [ext_resource path="res://world/fort.png" type="Texture" id=11]
 [ext_resource path="res://world/World.gd" type="Script" id=12]
 [ext_resource path="res://world/RestartManager.gd" type="Script" id=13]
 [ext_resource path="res://background-audio.tscn" type="PackedScene" id=14]
-
-[sub_resource type="ConvexPolygonShape2D" id=12]
-points = PoolVector2Array( 10.6398, 9.24607, 3.23751, 9.24607, 3.23751, 4.80468, 10.6398, 4.80468 )
-
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 9.12745, 13.0145, 3.47476, 13.0145, 3.47476, 2.78585, 9.12745, 2.78585 )
+[ext_resource path="res://passenger/yeah.ogg" type="AudioStream" id=15]
+[ext_resource path="res://passenger/Passenger.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=14]
 0/name = "desert.png 0"
@@ -41,22 +37,9 @@ points = PoolVector2Array( 9.12745, 13.0145, 3.47476, 13.0145, 3.47476, 2.78585,
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 12 )
 0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 3, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 12 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 1, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 13 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
 0/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
@@ -162,24 +145,6 @@ position = Vector2( 419.582, 278.571 )
 [node name="EnemySpawner4" parent="." instance=ExtResource( 4 )]
 position = Vector2( -299.217, 220.841 )
 
-[node name="Passenger" parent="." instance=ExtResource( 8 )]
-position = Vector2( 9.62371, -74.3688 )
-
-[node name="Passenger2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 9.62371, -74.3688 )
-
-[node name="Passenger3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -48, -72 )
-
-[node name="Passenger4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 0, -72 )
-
-[node name="Passenger5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 0, -80 )
-
-[node name="Passenger6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 24, -72 )
-
 [node name="CloudSystem" parent="." instance=ExtResource( 9 )]
 position = Vector2( -8.00772, -56 )
 spawn_rate = 5.0
@@ -236,3 +201,42 @@ Press 'esc' to restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Passenger" parent="." instance=ExtResource( 16 )]
+position = Vector2( 64, -72 )
+
+[node name="PassengerManager" parent="." instance=ExtResource( 8 )]
+position = Vector2( 56, -64 )
+
+[node name="PassengerManager2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 208, -48 )
+
+[node name="PassengerManager3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 0 )
+
+[node name="PassengerManager4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 208, 64 )
+
+[node name="PassengerManager5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 144, 80 )
+
+[node name="PassengerManager6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 144, 80 )
+
+[node name="PassengerManager7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 32, 32 )
+
+[node name="PassengerManager8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 48, 32 )
+
+[node name="PassengerManager9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 32 )
+
+[node name="PassengerManager10" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, 32 )
+
+[node name="PassengerManager11" parent="." instance=ExtResource( 8 )]
+position = Vector2( -144, -48 )
+
+[node name="YeahPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )

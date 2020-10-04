@@ -10,7 +10,7 @@ func _ready():
 
 func spawn_cloud():	
 	var cloud_instance = cloud.instance();
-	get_parent().add_child(cloud_instance)
+	get_parent().call_deferred('add_child', cloud_instance)
 	var rand_y = rand_range(-300, 300)
 	cloud_instance.position += Vector2(-400, rand_y)
 	

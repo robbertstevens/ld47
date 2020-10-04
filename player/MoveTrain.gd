@@ -27,7 +27,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("ui_load"):
 		var colliders = $Player.get_node("PickupLayer").get_overlapping_areas()
-		
+		print(colliders.size())
 		for collider in colliders:
 			if not collider.get_collision_layer() == 16:
 				continue
