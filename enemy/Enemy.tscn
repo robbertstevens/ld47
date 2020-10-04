@@ -8,7 +8,7 @@ resource_name = "hurt"
 length = 0.1
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:visible")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -17,7 +17,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ 4, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -49,11 +61,15 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+vframes = 2
 hframes = 3
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/hurt = SubResource( 1 )
 anims/walk = SubResource( 2 )
+next/hurt = "walk"
+blend_times = [ "hurt", "hurt", 0.01 ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )

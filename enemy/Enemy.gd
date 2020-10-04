@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	last_time_damaged -= delta
-	
+
 	if current_health <= 0:
 		queue_free()
 
@@ -31,3 +31,4 @@ func take_damage(damage: int = 10):
 		$AnimationPlayer.play("hurt")
 		current_health -= damage
 		last_time_damaged = invulnerability_period
+		
