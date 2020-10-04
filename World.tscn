@@ -103,7 +103,7 @@ script = null
 position = Vector2( 38.9659, -74.7819 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 5 )]
-position = Vector2( -248, -160 )
+position = Vector2( -80, -98.7819 )
 
 [node name="EnemySpawner2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 360, -112 )
