@@ -2,15 +2,19 @@ extends KinematicBody2D
 
 onready var EXPLOSION_SCENE = preload("res://player/gun/Explosion.tscn")
 
-var BULLET_SPEED = 50
+var BULLET_SPEED = 100
 var BULLET_LIFE_TIME = 10
 
 var alive_for_seconds = 0
 
 var direction = Vector2.ZERO
+var train_velocity = Vector2.ZERO
 
 func set_dir(dir):
 	direction = dir
+	
+func set_train_velocity(vel):
+	train_velocity = vel / 2
 
 func _process(delta):
 	alive_for_seconds += delta
@@ -18,7 +22,7 @@ func _process(delta):
 		queue_free()
 
 func _physics_process(delta):
-	var motion = direction * BULLET_SPEED
+	var motion = train_velocity + direction * BULLET_SPEED
 	var collider = move_and_collide(motion * delta)
 	
 	collision(collider)
